@@ -11,7 +11,7 @@ namespace PHPMath;
 
 use Exception;
 
-class PHPMath
+class Math
 {
     public const PI = M_PI;
     public const E = M_E;
