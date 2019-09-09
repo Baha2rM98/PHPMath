@@ -8,6 +8,8 @@
 
 namespace PHPMath;
 
+use mysql_xdevapi\Exception;
+
 class PHPMath
 {
     public const PI = M_PI;
@@ -228,5 +230,30 @@ class PHPMath
     public function arccoth($value)
     {
         return (self::ONE / atanh($value));
+    }
+
+
+    /**
+     * @param float $arg
+     * @param integer $base
+     * @return float logarithm $arg in this $base
+     */
+    public function log($arg, $base)
+    {
+        if ($base === 0 || $base === 1) {
+            throw new Exception("base can not be zero or one!");
+        }
+        return (log10($arg) / log10($base));
+    }
+
+
+    /**
+     * @param float $value
+     * @param integer $root
+     * @return float Nth root of this $value
+     */
+    public function nThRoot($value, $root)
+    {
+        return pow($value, (self::ONE / $root));
     }
 }
