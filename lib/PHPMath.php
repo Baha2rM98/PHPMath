@@ -8,7 +8,8 @@
 
 namespace PHPMath;
 
-use mysql_xdevapi\Exception;
+
+use Exception;
 
 class PHPMath
 {
@@ -31,7 +32,7 @@ class PHPMath
     /**
      * @param float $value in radian
      * @param boolean $radian (true if arg is radian and false if arg is degree)
-     * @return float (sin) of value in float
+     * @return float sin of value in float
      */
     public function sin($value, $radian = true)
     {
@@ -46,7 +47,7 @@ class PHPMath
     /**
      * @param float $value in radian
      * @param boolean $radian (true if arg is radian and false if arg is degree)
-     * @return float (cos) of value in float
+     * @return float cos of value in float
      */
     public function cos($value, $radian = true)
     {
@@ -61,7 +62,7 @@ class PHPMath
     /**
      * @param float $value in radian
      * @param boolean $radian (true if arg is radian and false if arg is degree)
-     * @return float (tan) of value in float
+     * @return float tan of value in float
      */
     public function tan($value, $radian = true)
     {
@@ -76,7 +77,7 @@ class PHPMath
     /**
      * @param float $value in radian
      * @param boolean $radian (true if arg is radian and false if arg is degree)
-     * @return float (cot) of value in float
+     * @return float cot of value in float
      */
     public function cot($value, $radian = true)
     {
@@ -90,7 +91,7 @@ class PHPMath
 
     /**
      * @param float $value in radian
-     * @return float (sinh) of value in float
+     * @return float sinh of value in float
      */
     public function sinh($value)
     {
@@ -100,7 +101,7 @@ class PHPMath
 
     /**
      * @param float $value in radian
-     * @return float (cosh) of value in float
+     * @return float cosh of value in float
      */
     public function cosh($value)
     {
@@ -110,7 +111,7 @@ class PHPMath
 
     /**
      * @param float $value in radian
-     * @return float (tanh) of value in float
+     * @return float tanh of value in float
      */
     public function tanh($value)
     {
@@ -120,7 +121,7 @@ class PHPMath
 
     /**
      * @param float $value in radian
-     * @return float (coth) of value in float
+     * @return float coth of value in float
      */
     public function coth($value)
     {
@@ -131,9 +132,9 @@ class PHPMath
     /**
      * @param float $value
      * @param boolean $radian (true if returned angle is degree, false if returned angle is radian)
-     * @return float arcsin of value
+     * @return float arc sin of value
      */
-    public function arcsin($value, $radian = true)
+    public function arcSin($value, $radian = true)
     {
         $angle = asin($value);
         if ($radian === false) {
@@ -147,9 +148,9 @@ class PHPMath
     /**
      * @param float $value
      * @param boolean $radian (true if returned angle is degree, false if returned angle is radian)
-     * @return float arccos of value
+     * @return float arc cos of value
      */
-    public function arccos($value, $radian = true)
+    public function arcCos($value, $radian = true)
     {
         $angle = acos($value);
         if ($radian === false) {
@@ -163,9 +164,9 @@ class PHPMath
     /**
      * @param float $value
      * @param boolean $radian (true if returned angle is degree, false if returned angle is radian)
-     * @return float arctan of value
+     * @return float arc tan of value
      */
-    public function arctan($value, $radian = true)
+    public function arcTan($value, $radian = true)
     {
         $angle = atan($value);
         if ($radian === false) {
@@ -179,9 +180,9 @@ class PHPMath
     /**
      * @param float $value
      * @param boolean $radian (true if returned angle is degree, false if returned angle is radian)
-     * @return float arccot of value
+     * @return float arc cot of value
      */
-    public function arccot($value, $radian = true)
+    public function arcCot($value, $radian = true)
     {
         $angle = atan($value);
         $angle = self::HALF_PI - $angle;
@@ -195,9 +196,9 @@ class PHPMath
 
     /**
      * @param float $value
-     * @return float arcsinh of value in float
+     * @return float arc sinh of value in float
      */
-    public function arcsinh($value)
+    public function arcSinh($value)
     {
         return asinh($value);
     }
@@ -205,9 +206,9 @@ class PHPMath
 
     /**
      * @param float $value
-     * @return float arccosh of value in float
+     * @return float arc cosh of value in float
      */
-    public function arccosh($value)
+    public function arcCosh($value)
     {
         return acosh($value);
     }
@@ -215,9 +216,9 @@ class PHPMath
 
     /**
      * @param float $value
-     * @return float arctanh of value in float
+     * @return float arc tanh of value in float
      */
-    public function arctanh($value)
+    public function arcTanh($value)
     {
         return atanh($value);
     }
@@ -225,9 +226,9 @@ class PHPMath
 
     /**
      * @param float $value
-     * @return float arctanh of value in float
+     * @return float arc coth of value in float
      */
-    public function arccoth($value)
+    public function arcCoth($value)
     {
         return (self::ONE / atanh($value));
     }
@@ -237,6 +238,7 @@ class PHPMath
      * @param float $arg
      * @param integer $base
      * @return float logarithm $arg in this $base
+     * @throws Exception throw exception if &base is 0 or 1
      */
     public function log($arg, $base)
     {
@@ -255,5 +257,76 @@ class PHPMath
     public function nThRoot($value, $root)
     {
         return pow($value, (self::ONE / $root));
+    }
+
+
+    /**
+     * @param integer $a
+     * @param integer $b
+     * @return integer return greatest common divisor of $a and $b
+     */
+    public function gcd($a, $b)
+    {
+        if ($b === 0) {
+            return $a;
+        }
+        return $this->gcd($b, ($a % $b));
+    }
+
+
+    /**
+     * @param integer $a
+     * @param integer $b
+     * @return integer return least common multiple of $a and $b
+     */
+    public function lcm($a, $b)
+    {
+        return (($a * $b) / $this->gcd($a, $b));
+    }
+
+
+    /**
+     * @param integer $x
+     * @return boolean return true if &x is even, return false if is odd
+     */
+    public function isEven($x)
+    {
+        if ($x % 2 === 0)
+            return true;
+        return false;
+    }
+
+
+    /**
+     * @param integer $x
+     * @return boolean return true if &x is odd, return false if is even
+     */
+    public function isOdd($x)
+    {
+        if (!$this->isEven($x))
+            return true;
+        return false;
+    }
+
+
+    /**
+     * @param float $x
+     * @return float return reverse of $x
+     */
+    public function reverse($x)
+    {
+        return (self::ONE / $x);
+    }
+
+
+    /**
+     * @param integer $n
+     * @return integer return factorial of $n
+     */
+    public function factorial($n)
+    {
+        if ($n === 1 || $n === 0)
+            return self::ONE;
+        return ($n * $this->factorial($n - 1));
     }
 }
