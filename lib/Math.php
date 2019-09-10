@@ -64,14 +64,14 @@ class Math
     {
         $a = 2 + rand() % ($n - 4);
         $x = $this->power($a, $d, $n);
-        if ($x == 1 || $x == $n - 1)
+        if ($x === 1 || $x === $n - 1)
             return true;
         while ($d != $n - 1) {
             $x = ($x * $x) % $n;
             $d *= 2;
-            if ($x == 1)
+            if ($x === 1)
                 return false;
-            if ($x == $n - 1)
+            if ($x === $n - 1)
                 return true;
         }
         return false;
@@ -390,12 +390,12 @@ class Math
     {
         if (strlen($n) > 34)
             throw new Exception("the number is too big!");
-        if ($n <= 1 || $n == 4)
+        if ($n <= 1 || $n === 4)
             return false;
         if ($n <= 3)
             return true;
         $d = $n - 1;
-        while ($d % 2 == 0)
+        while ($d % 2 === 0)
             $d /= 2;
         for ($i = 0; $i < $accuracy; $i++)
             if (!$this->millerRabinTest($d, $n))
