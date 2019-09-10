@@ -11,12 +11,14 @@ namespace PHPMath;
 
 use Exception;
 
+//TODO: add inner php functions
 class Math
 {
     public const PI = M_PI;
     public const E = M_E;
     public const ZERO = 0;
     public const ONE = 1;
+
 
     /*
      * private fields for inner usage
@@ -25,13 +27,6 @@ class Math
     private const ACCURACY = 1000;
     private const HALF_PI = M_PI_2;
 
-
-    /**
-     * constructor
-     **/
-    public function __construct()
-    {
-    }
 
     /*
      * private functions for inner usage
@@ -52,6 +47,7 @@ class Math
         }
         return $res;
     }
+
 
     // This function is called
     // for all k trials. It returns
@@ -76,6 +72,7 @@ class Math
         }
         return false;
     }
+
 
     /**
      * @param float $value in radian
