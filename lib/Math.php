@@ -15,9 +15,14 @@ class Math
 {
     public const PI = M_PI;
     public const E = M_E;
-    public const ZERO = 0.0;
-    public const ONE = 1.0;
-    private const _180 = 180.0;
+    public const ZERO = 0;
+    public const ONE = 1;
+
+    /*
+     * private fields for inner usage
+     */
+    private const _180 = 180;
+    private const ACCURACY = 1000;
     private const HALF_PI = M_PI_2;
 
 
@@ -28,6 +33,49 @@ class Math
     {
     }
 
+    /*
+     * private functions for inner usage
+     */
+
+    // Utility function to do
+    // modular exponentiation.
+    // It returns (x^y) % p
+    private function power($x, $y, $p)
+    {
+        $res = 1;
+        $x = $x % $p;
+        while ($y > 0) {
+            if ($y & 1)
+                $res = ($res * $x) % $p;
+            $y = $y >> 1; // $y = $y/2
+            $x = ($x * $x) % $p;
+        }
+        return $res;
+    }
+
+    // This function is called
+    // for all k trials. It returns
+    // false if n is composite and
+    // returns true if n is
+    // probably prime. d is an odd
+    // number such that d*2<sup>r</sup> = n-1
+    // for some r >= 1
+    private function millerRabinTest($d, $n)
+    {
+        $a = 2 + rand() % ($n - 4);
+        $x = $this->power($a, $d, $n);
+        if ($x == 1 || $x == $n - 1)
+            return true;
+        while ($d != $n - 1) {
+            $x = ($x * $x) % $n;
+            $d *= 2;
+            if ($x == 1)
+                return false;
+            if ($x == $n - 1)
+                return true;
+        }
+        return false;
+    }
 
     /**
      * @param float $value in radian
@@ -254,7 +302,7 @@ class Math
      * @param integer $root
      * @return float Nth root of this $value
      */
-    public function nThRoot($value, $root)
+    public function NthRoot($value, $root)
     {
         return pow($value, (self::ONE / $root));
     }
@@ -325,8 +373,65 @@ class Math
      */
     public function factorial($n)
     {
-        if ($n === 1 || $n === 0)
+        if ($n === self::ONE || $n === self::ZERO)
             return self::ONE;
         return ($n * $this->factorial($n - 1));
+    }
+
+
+    /**
+     * @param string $n the number will be checked if it is prime or not
+     * @param integer $accuracy accuracy of calculation
+     * @return boolean return true if $n is probably prime, false if $n is composite
+     * @throws Exception
+     * @uses Miller-Robin algorithm
+     */
+    public function isPrime($n, $accuracy)
+    {
+        if (strlen($n) > 34)
+            throw new Exception("the number is too big!");
+        if ($n <= 1 || $n == 4)
+            return false;
+        if ($n <= 3)
+            return true;
+        $d = $n - 1;
+        while ($d % 2 == 0)
+            $d /= 2;
+        for ($i = 0; $i < $accuracy; $i++)
+            if (!$this->millerRabinTest($d, $n))
+                return false;
+        return true;
+    }
+
+
+    /**
+     * @param integer $end starts from $start to end and detects prime numbers
+     * @param null $start if start is null it it will be consider 2
+     * @return array return an array includes prime numbers from start to end
+     * @throws Exception
+     */
+    public function primeNumbersList($end, $start = null)
+    {
+        if (is_null($start)) {
+            $e = $end;
+            $primes = array_fill(0, null, null);
+            $all = array_fill(0, $e, false);
+            for ($i = 2; $i <= sqrt($e); $i++) {
+                for ($j = 2 * $i; $j <= $e; $j += $i) {
+                    $all[$j] = true;
+                }
+            }
+            for ($i = 2; $i <= $e; $i++) {
+                if (!$all[$i])
+                    $primes[] = $i;
+            }
+            return $primes;
+        }
+        $primes = array_fill(0, null, null);
+        for ($i = $start; $i <= $end; $i++) {
+            if ($this->isPrime($i, self::ACCURACY))
+                $primes[] = $i;
+        }
+        return $primes;
     }
 }
