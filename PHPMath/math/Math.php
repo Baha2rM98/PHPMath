@@ -299,7 +299,7 @@ class Math
      * @param integer $root
      * @return float Nth root of this $value
      */
-    public function NthRoot($value, $root)
+    public function nThRoot($value, $root)
     {
         return pow($value, (self::ONE / $root));
     }
