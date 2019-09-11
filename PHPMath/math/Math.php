@@ -341,9 +341,9 @@ class Math
      */
     public function isEven($x)
     {
-        if ($x % 2 === 0)
-            return true;
-        return false;
+        if ($x & 1)
+            return false;
+        return true;
     }
 
 
@@ -353,7 +353,7 @@ class Math
      */
     public function isOdd($x)
     {
-        if (!$this->isEven($x))
+        if ($x & 1)
             return true;
         return false;
     }
