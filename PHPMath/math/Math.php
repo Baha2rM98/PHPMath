@@ -301,6 +301,11 @@ class Math
      */
     public function nThRoot($value, $root)
     {
+        if ($root & 1 && $value < 0) {
+            $ans = pow(-$value, (self::ONE / $root));
+            $ans *= -1;
+            return $ans;
+        }
         return pow($value, (self::ONE / $root));
     }
 
