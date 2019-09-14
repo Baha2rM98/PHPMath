@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="math class completed :)">
+    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,14 +31,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/math/Math.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
+            <state relative-caret-position="11970">
               <caret line="630" column="5" lean-forward="true" selection-start-line="630" selection-start-column="5" selection-end-line="630" selection-end-column="5" />
               <folding>
                 <element signature="e#7#67#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/algebra/Algebra.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -73,6 +82,7 @@
         <option value="$PROJECT_DIR$/src/test.php" />
         <option value="$PROJECT_DIR$/src/math/Math.php" />
         <option value="$PROJECT_DIR$/test.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -95,11 +105,6 @@
             <path>
               <item name="PHPMath" type="b2602c69:ProjectViewProjectNode" />
               <item name="PHPMath" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PHPMath" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PHPMath" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PHPMath" type="b2602c69:ProjectViewProjectNode" />
@@ -160,7 +165,7 @@
       <workItem from="1568327990307" duration="2624000" />
       <workItem from="1568365219147" duration="37000" />
       <workItem from="1568408672122" duration="1381000" />
-      <workItem from="1568434976421" duration="21148000" />
+      <workItem from="1568434976421" duration="21325000" />
     </task>
     <task id="LOCAL-00001" summary="trigonometric functions added">
       <created>1568035548070</created>
@@ -288,11 +293,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568490974665</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="workspace file updated">
+      <created>1568493089970</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1568493089970</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79038000" />
+    <option name="totallyTimeSpent" value="79215000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -305,6 +317,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20067114" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -350,7 +363,8 @@
     <MESSAGE value="all codes moved to src folder" />
     <MESSAGE value="all code repackaged" />
     <MESSAGE value="math class completed :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="math class completed :)" />
+    <MESSAGE value="workspace file updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace file updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -504,11 +518,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/math/Math.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
+        <state relative-caret-position="11970">
           <caret line="630" column="5" lean-forward="true" selection-start-line="630" selection-start-column="5" selection-end-line="630" selection-end-column="5" />
           <folding>
             <element signature="e#7#67#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algebra/Algebra.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
