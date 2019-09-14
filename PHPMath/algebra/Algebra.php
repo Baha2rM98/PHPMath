@@ -1,7 +1,12 @@
 <?php
 
-namespace Algebra;
+/**
+ * @author Baha2r
+ * @license MIT
+ * Date: 10/9/2019
+ **/
 
+namespace Algebra;
 
 use Exception;
 
@@ -107,4 +112,5 @@ class Algebra
         $roots[] = ($alpha * sqrt(-$p) * cos($beta * asin($gamma / $landau) + self::PI / 6) - $b / 3);
         return $roots;
     }
+    //TODO: line 108 use unique
 }
