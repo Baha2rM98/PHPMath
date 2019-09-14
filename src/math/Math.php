@@ -419,7 +419,6 @@ class Math
      * @param string $n the number will be checked if it is prime or not
      * @param integer $accuracy accuracy of calculation
      * @return integer return 2 if if $n is surly prime, 1 if $n is probably prime, 0 if $n is composite
-     * @throws Exception
      * @uses Miller-Robin algorithm
      */
     public function isPrime($n, $accuracy = 100)
