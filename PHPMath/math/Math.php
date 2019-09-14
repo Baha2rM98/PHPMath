@@ -11,7 +11,7 @@ namespace Math;
 
 use Exception;
 
-//TODO: add inner php functions
+//TODO: max, min, rand, angle_change
 class Math
 {
     public const PI = M_PI;
@@ -223,6 +223,19 @@ class Math
 
 
     /**
+     * @param float $x
+     * @param float $y
+     * @param boolean $radian if true return angle in radian, else return angle in degree
+     * @return float return atan of $x/$y
+     */
+    public function arcTan2($x, $y, $radian = true)
+    {
+        $z = $x / $y;
+        return $this->arcTan($z, $radian);
+    }
+
+
+    /**
      * @param float $value
      * @param boolean $radian (true if returned angle is degree, false if returned angle is radian)
      * @return float arc cot of value
@@ -297,7 +310,7 @@ class Math
     /**
      * @param float $value
      * @param integer $root
-     * @return float Nth root of this $value
+     * @return float return Nth root of this $value
      */
     public function nThRoot($value, $root)
     {
@@ -436,5 +449,164 @@ class Math
                 $primes[] = $i;
         }
         return $primes;
+    }
+
+
+    /**
+     * @param integer $number
+     * @return boolean return true if $number is complete, false if is not
+     **/
+    public function isComplete($number)
+    {
+        if ($this->isOdd($number))
+            return false;
+        $sum = 0;
+        for ($i = 1; $i < $number; $i++) {
+            if ($number % $i === 0)
+                $sum += $i;
+        }
+        if ($sum === $number)
+            return true;
+        return false;
+    }
+
+
+    /**
+     * @param integer $number
+     * @return boolean return true if $number is complete square, false if is not
+     **/
+    public function isCompleteSquare($number)
+    {
+        if (($number > 1 && $this->isOdd($number)) || $number === 0)
+            return false;
+        if ($number === 1)
+            return true;
+        if (floor(sqrt($number)) === sqrt($number))
+            return true;
+        return false;
+    }
+
+
+    /**
+     * @param float $number
+     * @return float|integer return true abs of $number
+     **/
+    public function abs($number)
+    {
+        return abs($number);
+    }
+
+
+    /**
+     * @param string $number
+     * @param integer $to
+     * @param integer $from
+     * @return string return converted number from base $from to base $to
+     */
+    public function baseConvert($number, $from, $to)
+    {
+        return base_convert($number, $from, $to);
+    }
+
+
+    /**
+     * @param string $number binary number will be convert to decimal format
+     * @return string return decimal number
+     */
+    public function binToDec($number)
+    {
+        return bindec($number);
+    }
+
+
+    /**
+     * @param integer $number decimal number will be convert to octal format
+     * @return string return octal number
+     */
+    public function decToOct($number)
+    {
+        return decoct($number);
+    }
+
+
+    /**
+     * @param string $number octal number will be convert to decimal format
+     * @return integer|float return decimal number
+     */
+    public function octToDec($number)
+    {
+        return octdec($number);
+    }
+
+
+    /**
+     * @param string $number decimal number will be convert to binary format
+     * @return string return binary number
+     */
+    public function decToBin($number)
+    {
+        return decbin($number);
+    }
+
+
+    /**
+     * @param integer $number decimal number will be convert to hexadecimal format
+     * @return string return hexadecimal number
+     */
+    public function decToHex($number)
+    {
+        return dechex($number);
+    }
+
+
+    /**
+     * @param string $number hexadecimal number will be convert to decimal format
+     * @return integer|float return decimal number
+     */
+    public function hexToDec($number)
+    {
+        return hexdec($number);
+    }
+
+
+
+    /**
+     * @param float $number float number
+     * @return float return rounded float number
+     */
+    public function round($number)
+    {
+       return round($number);
+    }
+
+
+    /**
+     * @param float float number
+     * @return float return rounded up to the next highest integer
+     */
+    public function ceil($number)
+    {
+        return ceil($number);
+    }
+
+
+    /**
+     * @param float float number
+     * @return float return rounded down to the previous highest integer
+     */
+    public function floor($number)
+    {
+        return floor($number);
+    }
+
+
+    /**
+     * @param integer|float the number will be exp by
+     * @param integer|float exp
+     * @return integer|float return $number will be exp $base
+     */
+    public function pow($number, $base)
+    {
+        return pow($number, $base);
     }
 }
