@@ -1,0 +1,22 @@
+{
+  "name": "php-math/phpmath",
+  "description": "A math library for php",
+  "authors": [
+    {
+      "name": "Bahador Mirzazadeh",
+      "email": "baha2r.mirzazadeh98@gmail.com"
+    }
+  ],
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.0.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "Math": "src/",
+      "Algebra": "src/"
+    }
+  }
+}
