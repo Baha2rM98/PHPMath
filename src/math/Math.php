@@ -443,7 +443,6 @@ class Math
      * @param integer $end starts from $start to end and detects prime numbers
      * @param null $start if start is null it it will be consider 2
      * @return array return an array includes prime numbers from start to end
-     * @throws Exception
      * @uses Sieve of Eratosthenes
      */
     public function primeNumbersList($end, $start = null)
