@@ -11,7 +11,7 @@ namespace Math;
 
 use Exception;
 
-//TODO: rand, angle_change
+
 class Math
 {
     public const PI = M_PI;
@@ -26,6 +26,7 @@ class Math
     private const _180 = 180;
     private const ACCURACY = 1000;
     private const HALF_PI = M_PI_2;
+    private const MAX_INT = PHP_INT_MAX;
 
 
     /*
@@ -71,6 +72,26 @@ class Math
                 return true;
         }
         return false;
+    }
+
+
+    /**
+     * @param float $radian angle in radian
+     * @return float return angle in degree
+     */
+    public function radToDeg($radian)
+    {
+        return ((self::_180 / self::PI) * $radian);
+    }
+
+
+    /**
+     * @param float $degree angle in degree
+     * @return float return angle in radian
+     */
+    public function degToRad($degree)
+    {
+        return ((self::PI / self::_180) * $degree);
     }
 
 
@@ -580,7 +601,7 @@ class Math
 
 
     /**
-     * @param float float number
+     * @param float $number float number
      * @return float return rounded up to the next highest integer
      */
     public function ceil($number)
@@ -590,7 +611,7 @@ class Math
 
 
     /**
-     * @param float float number
+     * @param float $number float number
      * @return float return rounded down to the previous highest integer
      */
     public function floor($number)
@@ -600,18 +621,18 @@ class Math
 
 
     /**
-     * @param integer|float the number will be exp by
-     * @param integer|float exp
-     * @return integer|float return $number will be exp $base
+     * @param integer|float $number the number will be exp by
+     * @param integer|float $exp exponent
+     * @return integer|float return the number exponents to $exp
      */
-    public function pow($number, $base)
+    public function pow($number, $exp)
     {
-        return pow($number, $base);
+        return pow($number, $exp);
     }
 
 
     /**
-     * @param array the array will be search for the maximum item
+     * @param array $arr the array will be search for the maximum item
      * @return float return maximum number in array
      */
     public function findMax($arr)
@@ -625,7 +646,7 @@ class Math
 
 
     /**
-     * @param array the array will be search for the minimum item
+     * @param array $arr the array will be search for the minimum item
      * @return float return minimum number in array
      */
     public function findMin($arr)
@@ -635,5 +656,16 @@ class Math
             if ($item < $min)
                 $min = $item;
         return $min;
+    }
+
+    /**
+     * @param int $min the minimum range
+     * @param int $max the maximum range
+     * @return string return a random number between $min and $max
+     * @throws Exception
+     */
+    public function generateRandom($min = 0, $max = self::MAX_INT)
+    {
+        return random_int($min, $max);
     }
 }
