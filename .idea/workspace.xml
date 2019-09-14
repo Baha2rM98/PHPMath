@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="composer.lock created">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/math/Math.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/math/Math.php" afterDir="false" />
-    </list>
+    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/math/Math.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="432" column="28" selection-start-line="432" selection-start-column="28" selection-end-line="432" selection-end-column="28" />
+            <state relative-caret-position="361">
+              <caret line="459" column="30" selection-start-line="459" selection-start-column="30" selection-end-line="459" selection-end-column="30" />
               <folding>
                 <element signature="e#7#67#0#PHP" expanded="true" />
               </folding>
@@ -44,20 +41,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/algebra/Algebra.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+            <state relative-caret-position="219">
+              <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+            <state relative-caret-position="304">
+              <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+              <folding>
+                <element signature="e#44#64#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,7 +176,7 @@
       <workItem from="1568327990307" duration="2624000" />
       <workItem from="1568365219147" duration="37000" />
       <workItem from="1568408672122" duration="1381000" />
-      <workItem from="1568434976421" duration="22389000" />
+      <workItem from="1568434976421" duration="22714000" />
     </task>
     <task id="LOCAL-00001" summary="trigonometric functions added">
       <created>1568035548070</created>
@@ -339,11 +339,32 @@
       <option name="project" value="LOCAL" />
       <updated>1568494015457</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="extra PHPDoc deleted">
+      <created>1568494213558</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1568494213558</updated>
+    </task>
+    <task id="LOCAL-00025" summary="workspace file updated">
+      <created>1568494232589</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1568494232589</updated>
+    </task>
+    <task id="LOCAL-00026" summary="extra PHPDoc deleted">
+      <created>1568494335141</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1568494335141</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80279000" />
+    <option name="totallyTimeSpent" value="80604000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -402,11 +423,12 @@
     <MESSAGE value="all codes moved to src folder" />
     <MESSAGE value="all code repackaged" />
     <MESSAGE value="math class completed :)" />
-    <MESSAGE value="workspace file updated" />
     <MESSAGE value="workspace file updated, composer added to project" />
     <MESSAGE value="composer.json updated" />
     <MESSAGE value="composer.lock created" />
-    <option name="LAST_COMMIT_MESSAGE" value="composer.lock created" />
+    <MESSAGE value="workspace file updated" />
+    <MESSAGE value="extra PHPDoc deleted" />
+    <option name="LAST_COMMIT_MESSAGE" value="extra PHPDoc deleted" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -577,17 +599,10 @@
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/algebra/Algebra.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/math/Math.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="432" column="28" selection-start-line="432" selection-start-column="28" selection-end-line="432" selection-end-column="28" />
+        <state relative-caret-position="361">
+          <caret line="459" column="30" selection-start-line="459" selection-start-column="30" selection-end-line="459" selection-end-column="30" />
           <folding>
             <element signature="e#7#67#0#PHP" expanded="true" />
           </folding>
@@ -596,8 +611,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        <state relative-caret-position="304">
+          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding>
+            <element signature="e#44#64#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algebra/Algebra.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
         </state>
       </provider>
     </entry>
