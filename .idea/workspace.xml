@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="workspace file updated">
-      <change beforePath="$PROJECT_DIR$/.idea/PHPMath.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PHPMath.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-    </list>
+    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment=".idea directory synced with composer" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +161,7 @@
       <workItem from="1568365219147" duration="37000" />
       <workItem from="1568408672122" duration="1381000" />
       <workItem from="1568434976421" duration="24439000" />
-      <workItem from="1568557726867" duration="698000" />
+      <workItem from="1568557726867" duration="900000" />
     </task>
     <task id="LOCAL-00001" summary="trigonometric functions added">
       <created>1568035548070</created>
@@ -372,11 +366,25 @@
       <option name="project" value="LOCAL" />
       <updated>1568495889087</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="composer files synced with php 7.1.0 (at least)">
+      <created>1568558536529</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1568558536529</updated>
+    </task>
+    <task id="LOCAL-00031" summary=".idea directory synced with composer">
+      <created>1568558579610</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1568558579610</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83027000" />
+    <option name="totallyTimeSpent" value="83229000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -389,8 +397,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2033557" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2033557" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -417,7 +426,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="trigonometric functions added" />
     <MESSAGE value="trigonometric functions completed" />
     <MESSAGE value="calculation method of Nth root of a number and logarithm in optional base added" />
     <MESSAGE value="a directory created for this library" />
@@ -441,7 +449,9 @@
     <MESSAGE value="test file created" />
     <MESSAGE value="composer.lock updated" />
     <MESSAGE value="workspace file updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace file updated" />
+    <MESSAGE value="composer files synced with php 7.1.0 (at least)" />
+    <MESSAGE value=".idea directory synced with composer" />
+    <option name="LAST_COMMIT_MESSAGE" value=".idea directory synced with composer" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/PHPMath/PHPMath.php" />
