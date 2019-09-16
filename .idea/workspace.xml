@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="vendor directory added (related to composer)">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/math/Math.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/math/Math.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +105,7 @@
       <workItem from="1568580141149" duration="75000" />
       <workItem from="1568580231014" duration="122000" />
       <workItem from="1568580366647" duration="3470000" />
-      <workItem from="1568654118346" duration="9654000" />
+      <workItem from="1568654118346" duration="10027000" />
     </task>
     <task id="LOCAL-00001" summary="trigonometric functions added">
       <created>1568035548070</created>
@@ -354,7 +352,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568669140229</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="test.php file updated">
+      <created>1568669199936</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1568669199936</updated>
+    </task>
+    <task id="LOCAL-00037" summary="workspace file updated">
+      <created>1568669237923</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1568669237923</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -383,7 +395,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="class renamed" />
     <MESSAGE value="two method added: check if a number is prime, make a list includes prime numbers between two specific number" />
     <MESSAGE value="not essential constructor deleted" />
     <MESSAGE value="algebra class created" />
@@ -401,13 +412,14 @@
     <MESSAGE value="extra PHPDoc deleted" />
     <MESSAGE value="test file created" />
     <MESSAGE value="composer.lock updated" />
-    <MESSAGE value="workspace file updated" />
     <MESSAGE value="composer files synced with php 7.1.0 (at least)" />
     <MESSAGE value=".idea directory synced with composer" />
     <MESSAGE value=".gitignore file changed to default" />
     <MESSAGE value="vendor directory added (related to composer)" />
     <MESSAGE value="some of methods optimized" />
     <MESSAGE value="system of linear equations solver added" />
-    <option name="LAST_COMMIT_MESSAGE" value="system of linear equations solver added" />
+    <MESSAGE value="test.php file updated" />
+    <MESSAGE value="workspace file updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace file updated" />
   </component>
 </project>
