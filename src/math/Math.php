@@ -23,8 +23,9 @@ class Math
     /*
      * private fields for inner usage
      */
+    private const TWO = 2;
     private const _180 = 180;
-    private const ACCURACY = 1000;
+    private const ACCURACY = 100;
     private const HALF_PI = M_PI_2;
     private const MAX_INT = PHP_INT_MAX;
 
@@ -421,7 +422,7 @@ class Math
      * @return integer return 2 if if $n is surly prime, 1 if $n is probably prime, 0 if $n is composite
      * @uses Miller-Robin algorithm
      */
-    public function isPrime($n, $accuracy = 100)
+    public function isPrime($n, $accuracy = self::ACCURACY)
     {
         if (strlen($n) > 34)
             return gmp_prob_prime($n);
@@ -445,7 +446,7 @@ class Math
      * @return array return an array includes prime numbers from start to end
      * @uses Sieve of Eratosthenes
      */
-    public function primeNumbersList($end, $start = null)
+    public function ProbablePrimeNumbersList($end, $start = null)
     {
         if (is_null($start)) {
             $e = $end;
@@ -464,7 +465,7 @@ class Math
         }
         $primes = array_fill(0, null, null);
         for ($i = $start; $i <= $end; $i++) {
-            if ($this->isPrime($i, self::ACCURACY))
+            if (gmp_prob_prime($i) === self::ONE || gmp_prob_prime($i) === self::TWO)
                 $primes[] = $i;
         }
         return $primes;
