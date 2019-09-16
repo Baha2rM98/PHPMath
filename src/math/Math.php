@@ -419,10 +419,10 @@ class Math
     /**
      * @param string $n the number will be checked if it is prime or not
      * @param integer $accuracy accuracy of calculation
-     * @return integer return 2 if if $n is surly prime, 1 if $n is probably prime, 0 if $n is composite
+     * @return integer return 2 if $n is surly prime, 1 if $n is probably prime, 0 if $n is composite
      * @uses Miller-Robin algorithm
      */
-    public function isPrime($n, $accuracy = self::ACCURACY)
+    public function isProbablePrime($n, $accuracy = self::ACCURACY)
     {
         if (strlen($n) > 34)
             return gmp_prob_prime($n);
