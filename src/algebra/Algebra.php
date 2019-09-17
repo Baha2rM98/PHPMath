@@ -35,21 +35,6 @@ class Algebra
     }
 
 
-    /*
-     * private functions for inner usage
-     */
-    //auxiliary function to calculate Nth root of a number
-    private function nThRoot($value, $root)
-    {
-        if ($root & 1 && $value < 0) {
-            $ans = pow(-$value, (self::ONE / $root));
-            $ans *= -1;
-            return $ans;
-        }
-        return pow($value, (self::ONE / $root));
-    }
-
-
     /**
      * @param float $a
      * @param float $b
@@ -119,11 +104,11 @@ class Algebra
             $delta = ((($q ** 2) / 4) + (($p ** 3) / 27));
         }
         if ($delta > self::ZERO)
-            return ($this->nThRoot((-$q / 2) + sqrt($delta), 3) + $this->nThRoot(((-$q / 2) - sqrt($delta)), 3) - ($b / 3));
+            return ($this->math->nThRoot((-$q / 2) + sqrt($delta), 3) + $this->math->nThRoot(((-$q / 2) - sqrt($delta)), 3) - ($b / 3));
         $roots = array();
         if ($delta === self::ZERO) {
-            $roots[] = ((-2 * $this->nThRoot($q / 2, 3)) - ($b / 2));
-            $roots[] = ($this->nThRoot($q / 2, 3) - ($b / 2));
+            $roots[] = ((-2 * $this->math->nThRoot($q / 2, 3)) - ($b / 2));
+            $roots[] = ($this->math->nThRoot($q / 2, 3) - ($b / 2));
             return array_unique($roots);
         }
         $alpha = 2 / sqrt(3);
