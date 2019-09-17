@@ -16,18 +16,20 @@ class Math
 {
     public const PI = M_PI;
     public const E = M_E;
-    public const ZERO = 0;
-    public const ONE = 1;
-
+    Public const MAX_INT = PHP_INT_MAX;
+    Public const MIN_INT = PHP_INT_MIN;
+    Public const MAX_FLOAT = PHP_FLOAT_MAX;
+    Public const MIN_FLOAT = PHP_FLOAT_MIN;
 
     /*
      * private fields for inner usage
      */
+    private const ZERO = 0;
+    private const ONE = 1;
     private const TWO = 2;
     private const _180 = 180;
     private const ACCURACY = 100;
     private const HALF_PI = M_PI_2;
-    private const MAX_INT = PHP_INT_MAX;
 
 
     /*
@@ -39,12 +41,12 @@ class Math
     // It returns (x^y) % p
     private function power($x, $y, $p)
     {
-        $res = 1;
+        $res = self::ONE;
         $x = $x % $p;
-        while ($y > 0) {
-            if ($y & 1)
+        while ($y > self::ZERO) {
+            if ($y & self::ONE)
                 $res = ($res * $x) % $p;
-            $y = $y >> 1; // $y = $y/2
+            $y = $y >> self::ONE; // $y = $y/2
             $x = ($x * $x) % $p;
         }
         return $res;
@@ -62,14 +64,14 @@ class Math
     {
         $a = 2 + rand() % ($n - 4);
         $x = $this->power($a, $d, $n);
-        if ($x === 1 || $x === $n - 1)
+        if ($x === self::ONE || $x === $n - self::ONE)
             return true;
-        while ($d != $n - 1) {
+        while ($d != $n - self::ONE) {
             $x = ($x * $x) % $n;
             $d *= 2;
-            if ($x === 1)
+            if ($x === self::ONE)
                 return false;
-            if ($x === $n - 1)
+            if ($x === $n - self::ONE)
                 return true;
         }
         return false;
@@ -322,7 +324,7 @@ class Math
      */
     public function log($arg, $base)
     {
-        if ($base === 0 || $base === 1) {
+        if ($base === self::ZERO || $base === self::ONE) {
             throw new Exception("base can not be zero or one!");
         }
         return (log10($arg) / log10($base));
@@ -336,7 +338,7 @@ class Math
      */
     public function nThRoot($value, $root)
     {
-        if ($root & 1 && $value < 0) {
+        if (($root & self::ONE) && $value < self::ZERO) {
             $ans = pow(-$value, (self::ONE / $root));
             $ans *= -1;
             return $ans;
@@ -376,7 +378,7 @@ class Math
      */
     public function isEven($x)
     {
-        if ($x & 1)
+        if ($x & self::ONE)
             return false;
         return true;
     }
@@ -388,7 +390,7 @@ class Math
      */
     public function isOdd($x)
     {
-        if ($x & 1)
+        if ($x & self::ONE)
             return true;
         return false;
     }
@@ -412,7 +414,7 @@ class Math
     {
         if ($n === self::ONE || $n === self::ZERO)
             return self::ONE;
-        return ($n * $this->factorial($n - 1));
+        return ($n * $this->factorial($n - self::ONE));
     }
 
 
@@ -426,17 +428,17 @@ class Math
     {
         if (strlen($n) > 34)
             return gmp_prob_prime($n);
-        if ($n <= 1 || $n === 4)
-            return 0;
+        if ($n <= self::ONE || $n === 4)
+            return self::ZERO;
         if ($n <= 3)
             return 1;
         $d = $n - 1;
-        while ($d % 2 === 0)
+        while ($d % 2 === self::ZERO)
             $d /= 2;
         for ($i = 0; $i < $accuracy; $i++)
             if (!$this->millerRabinTest($d, $n))
-                return 0;
-        return 1;
+                return self::ZERO;
+        return self::ONE;
     }
 
 
@@ -450,8 +452,8 @@ class Math
     {
         if (is_null($start)) {
             $e = $end;
-            $primes = array_fill(0, null, null);
-            $all = array_fill(0, $e, false);
+            $primes = array_fill(self::ZERO, null, null);
+            $all = array_fill(self::ZERO, $e, false);
             for ($i = 2; $i <= sqrt($e); $i++) {
                 for ($j = 2 * $i; $j <= $e; $j += $i) {
                     $all[$j] = true;
@@ -476,13 +478,13 @@ class Math
      * @param integer $number
      * @return boolean return true if $number is complete, false if is not
      **/
-    public function isComplete($number)
+    public function isPerfect($number)
     {
         if ($this->isOdd($number))
             return false;
-        $sum = 0;
+        $sum = self::ZERO;
         for ($i = 1; $i < $number; $i++) {
-            if ($number % $i === 0)
+            if ($number % $i === self::ZERO)
                 $sum += $i;
         }
         if ($sum === $number)
@@ -497,9 +499,9 @@ class Math
      **/
     public function isCompleteSquare($number)
     {
-        if (($number > 1 && $this->isOdd($number)) || $number === 0)
+        if (($number > self::ONE && $this->isOdd($number)) || $number === self::ZERO)
             return false;
-        if ($number === 1)
+        if ($number === self::ONE)
             return true;
         if (floor(sqrt($number)) === sqrt($number))
             return true;
@@ -636,7 +638,7 @@ class Math
      */
     public function findMax($arr)
     {
-        $max = $arr[0];
+        $max = $arr[self::ZERO];
         foreach ($arr as $item)
             if ($item > $max)
                 $max = $item;
@@ -650,7 +652,7 @@ class Math
      */
     public function findMin($arr)
     {
-        $min = $arr[0];
+        $min = $arr[self::ZERO];
         foreach ($arr as $item)
             if ($item < $min)
                 $min = $item;
