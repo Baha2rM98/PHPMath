@@ -62,13 +62,13 @@ class Math
     // for some r >= 1
     private function millerRabinTest($d, $n)
     {
-        $a = 2 + rand() % ($n - 4);
+        $a = self::TWO + rand() % ($n - 4);
         $x = $this->power($a, $d, $n);
         if ($x === self::ONE || $x === $n - self::ONE)
             return true;
         while ($d != $n - self::ONE) {
             $x = ($x * $x) % $n;
-            $d *= 2;
+            $d *= self::TWO;
             if ($x === self::ONE)
                 return false;
             if ($x === $n - self::ONE)
@@ -433,8 +433,8 @@ class Math
         if ($n <= 3)
             return 1;
         $d = $n - 1;
-        while ($d % 2 === self::ZERO)
-            $d /= 2;
+        while ($d % self::TWO === self::ZERO)
+            $d /= self::TWO;
         for ($i = 0; $i < $accuracy; $i++)
             if (!$this->millerRabinTest($d, $n))
                 return self::ZERO;
@@ -448,7 +448,7 @@ class Math
      * @return array return an array includes prime numbers from start to end
      * @uses Sieve of Eratosthenes
      */
-    public function ProbablePrimeNumbersList($end, $start = null)
+    public function probablePrimeNumbersList($end, $start = null)
     {
         if (is_null($start)) {
             $e = $end;
@@ -476,7 +476,7 @@ class Math
 
     /**
      * @param integer $number
-     * @return boolean return true if $number is complete, false if is not
+     * @return boolean return true if $number is perfect, false if is not
      **/
     public function isPerfect($number)
     {
@@ -495,6 +495,57 @@ class Math
 
     /**
      * @param integer $number
+     * @return array return divisors of $number
+     **/
+    public function dividable($number)
+    {
+        $factors = array();
+        for ($i = 1; $i <= $number; $i++)
+            if ($number % $i === self::ZERO)
+                $factors[] = $i;
+        return $factors;
+    }
+
+
+    /**
+     * @param integer $number
+     * @return integer return sum of digits of $number
+     **/
+    public function sumOfDigits($number)
+    {
+        $sum = self::ZERO;
+        while ($number !== self::ZERO) {
+            $sum += $number % 10;
+            $number = ((int)$number / (int)10);
+        }
+        return $sum;
+    }
+
+
+    /**
+     * @param integer $number
+     * @return array return prime factors of $number
+     **/
+    public function primeFactors($number)
+    {
+        $primeFactors = array();
+        while ($number % self::TWO == 0) {
+            $primeFactors[] = self::TWO;
+            $number = $number / self::TWO;
+        }
+        for ($i = 3; $i <= sqrt($number); $i += self::TWO)
+            while ($number % $i == self::ZERO) {
+                $primeFactors[] = $i;
+                $number = $number / $i;
+            }
+        if ($number > self::TWO)
+            $primeFactors[] = $number;
+        return $primeFactors;
+    }
+
+
+    /**
+     * @param integer $number
      * @return boolean return true if $number is complete square, false if is not
      **/
     public function isCompleteSquare($number)
@@ -506,6 +557,21 @@ class Math
         if (floor(sqrt($number)) === sqrt($number))
             return true;
         return false;
+    }
+
+
+    /**
+     * @param integer $end the end of fibonacci series
+     * @return array return fibonacci series from beginning to $end
+     **/
+    public function fibonacci($end)
+    {
+        $fib = array();
+        $fib[0] = 1;
+        $fib[1] = 1;
+        for ($i = 2; $i < $end; $i++)
+            $fib[$i] = $fib[$i - self::ONE] + $fib[$i - self::TWO];
+        return $fib;
     }
 
 
