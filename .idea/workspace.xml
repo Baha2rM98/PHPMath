@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +50,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practice" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laravel-course/laravel" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -107,7 +106,7 @@
       <workItem from="1568580231014" duration="122000" />
       <workItem from="1568580366647" duration="3470000" />
       <workItem from="1568654118346" duration="10161000" />
-      <workItem from="1568710052356" duration="757000" />
+      <workItem from="1568710052356" duration="1384000" />
     </task>
     <task id="LOCAL-00001" summary="trigonometric functions added">
       <created>1568035548070</created>
@@ -382,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568669555071</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="composer.json updated">
+      <created>1568710836875</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1568710836875</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -423,7 +429,6 @@
     <MESSAGE value="all code repackaged" />
     <MESSAGE value="math class completed :)" />
     <MESSAGE value="workspace file updated, composer added to project" />
-    <MESSAGE value="composer.json updated" />
     <MESSAGE value="composer.lock created" />
     <MESSAGE value="extra PHPDoc deleted" />
     <MESSAGE value="test file created" />
@@ -436,6 +441,7 @@
     <MESSAGE value="test.php file updated" />
     <MESSAGE value="workspace file updated" />
     <MESSAGE value="some of methods optimized" />
-    <option name="LAST_COMMIT_MESSAGE" value="some of methods optimized" />
+    <MESSAGE value="composer.json updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="composer.json updated" />
   </component>
 </project>
