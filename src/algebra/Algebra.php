@@ -160,7 +160,7 @@ class Algebra
             for ($i = 1; $i < $n; $i++) {
                 $subJ = 0;
                 for ($j = 0; $j < $n; $j++) {
-                    if ($j == $x)
+                    if ($j === $x)
                         continue;
                     $subMatrix[$subI][$subJ] = $matrix[$i][$j];
                     $subJ++;
