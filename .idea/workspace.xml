@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/math/Math.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/math/Math.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +106,8 @@
       <workItem from="1568580141149" duration="75000" />
       <workItem from="1568580231014" duration="122000" />
       <workItem from="1568580366647" duration="3470000" />
-      <workItem from="1568654118346" duration="10027000" />
+      <workItem from="1568654118346" duration="10161000" />
+      <workItem from="1568710052356" duration="757000" />
     </task>
     <task id="LOCAL-00001" summary="trigonometric functions added">
       <created>1568035548070</created>
@@ -366,7 +368,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568669237923</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="workspace file updated">
+      <created>1568669543149</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1568669543149</updated>
+    </task>
+    <task id="LOCAL-00039" summary="some of methods optimized">
+      <created>1568669555071</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1568669555071</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -416,10 +432,10 @@
     <MESSAGE value=".idea directory synced with composer" />
     <MESSAGE value=".gitignore file changed to default" />
     <MESSAGE value="vendor directory added (related to composer)" />
-    <MESSAGE value="some of methods optimized" />
     <MESSAGE value="system of linear equations solver added" />
     <MESSAGE value="test.php file updated" />
     <MESSAGE value="workspace file updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace file updated" />
+    <MESSAGE value="some of methods optimized" />
+    <option name="LAST_COMMIT_MESSAGE" value="some of methods optimized" />
   </component>
 </project>

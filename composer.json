@@ -1,15 +1,21 @@
 {
   "name": "php-math/phpmath",
   "description": "A math library for php",
+  "keywords": [
+    "php",
+    "math",
+    "algebra"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "homepage": "https://github.com/Baha2rM98/PHPMath",
   "authors": [
     {
       "name": "Bahador Mirzazadeh",
       "email": "baha2r.mirzazadeh98@gmail.com"
     }
   ],
-  "type": "library",
-  "license": "MIT License",
-  "minimum-stability": "stable",
   "require": {
     "php": ">=7.1.0",
     "ext-gmp": "*"
