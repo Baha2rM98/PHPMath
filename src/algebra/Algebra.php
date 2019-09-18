@@ -7,7 +7,6 @@
  **/
 
 namespace Algebra;
-require_once "src\math\Math.php";
 
 use Math\Math;
 use Exception;
