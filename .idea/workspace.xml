@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +111,7 @@
       <workItem from="1568751589148" duration="4854000" />
       <workItem from="1568824824357" duration="437000" />
       <workItem from="1568827513330" duration="181000" />
+      <workItem from="1568828506717" duration="204000" />
     </task>
     <task id="LOCAL-00001" summary="trigonometric functions added">
       <created>1568035548070</created>
@@ -436,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568756346155</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="extra require_once deleted">
+      <created>1568828700854</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1568828700854</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -465,7 +471,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="a function's name changed" />
     <MESSAGE value="linear, quadratic and cubic equation solver added" />
     <MESSAGE value="bugs fixed" />
     <MESSAGE value="namespace changed to Math" />
@@ -490,6 +495,7 @@
     <MESSAGE value="some new methods added :)" />
     <MESSAGE value="an extra method deleted" />
     <MESSAGE value="workspace file updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace file updated" />
+    <MESSAGE value="extra require_once deleted" />
+    <option name="LAST_COMMIT_MESSAGE" value="extra require_once deleted" />
   </component>
 </project>
