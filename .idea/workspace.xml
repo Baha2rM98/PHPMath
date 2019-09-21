@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="" />
+    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +34,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1QtAlH0MMjjjLIIoEkceM4WwqDe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
@@ -109,21 +116,7 @@
       <workItem from="1568827513330" duration="181000" />
       <workItem from="1568828506717" duration="204000" />
       <workItem from="1568896902097" duration="108000" />
-      <workItem from="1569083757345" duration="685000" />
-    </task>
-    <task id="LOCAL-00005" summary="some operational math functions added">
-      <created>1568070560579</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1568070560579</updated>
-    </task>
-    <task id="LOCAL-00006" summary="class renamed">
-      <created>1568072087079</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1568072087079</updated>
+      <workItem from="1569083757345" duration="1187000" />
     </task>
     <task id="LOCAL-00007" summary="two method added: check if a number is prime, make a list includes prime numbers between two specific number">
       <created>1568134068547</created>
@@ -454,7 +447,21 @@
       <option name="project" value="LOCAL" />
       <updated>1569084379127</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="composer updated">
+      <created>1569084674312</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1569084674312</updated>
+    </task>
+    <task id="LOCAL-00055" summary="math namespace changed">
+      <created>1569084954090</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1569084954090</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -483,7 +490,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="all code repackaged" />
     <MESSAGE value="math class completed :)" />
     <MESSAGE value="workspace file updated, composer added to project" />
     <MESSAGE value="composer.lock created" />
@@ -505,9 +511,10 @@
     <MESSAGE value="a necessary autoload added" />
     <MESSAGE value="workspace file updated" />
     <MESSAGE value="packages an namespaces changed" />
-    <MESSAGE value="composer updated" />
     <MESSAGE value=".gitignore file updated" />
     <MESSAGE value="vendor omitted" />
-    <option name="LAST_COMMIT_MESSAGE" value="vendor omitted" />
+    <MESSAGE value="composer updated" />
+    <MESSAGE value="math namespace changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="math namespace changed" />
   </component>
 </project>

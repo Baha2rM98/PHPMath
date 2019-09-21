@@ -2,8 +2,8 @@
 
 require_once "vendor\autoload.php";
 
-use Algebra\Algebra;
-use Math\Math;
+use PHPMAth\Math\Math;
+use PHPMAth\Algebra\Algebra;
 
 //example for Math class
 $math = new Math();
