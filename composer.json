@@ -13,7 +13,8 @@
   "authors": [
     {
       "name": "Bahador Mirzazadeh",
-      "email": "baha2r.mirzazadeh98@gmail.com"
+      "email": "baha2r.mirzazadeh98@gmail.com",
+      "role": "Developer"
     }
   ],
   "require": {
