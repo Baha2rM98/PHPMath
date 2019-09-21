@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +44,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/PHPMath" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PhpstormProjects/tests" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -115,14 +116,7 @@
       <workItem from="1568827513330" duration="181000" />
       <workItem from="1568828506717" duration="204000" />
       <workItem from="1568896902097" duration="108000" />
-      <workItem from="1569083757345" duration="1446000" />
-    </task>
-    <task id="LOCAL-00009" summary="not essential constructor deleted">
-      <created>1568147646847</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1568147646847</updated>
+      <workItem from="1569083757345" duration="3333000" />
     </task>
     <task id="LOCAL-00010" summary="algebra class created">
       <created>1568147669655</created>
@@ -460,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569085061041</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary=".gitignore file updated">
+      <created>1569085254274</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1569085254274</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -508,12 +509,12 @@
     <MESSAGE value="a necessary autoload added" />
     <MESSAGE value="workspace file updated" />
     <MESSAGE value="packages an namespaces changed" />
-    <MESSAGE value=".gitignore file updated" />
     <MESSAGE value="vendor omitted" />
     <MESSAGE value="composer updated" />
     <MESSAGE value="math namespace changed" />
     <MESSAGE value="test.php updated" />
     <MESSAGE value="test.php updated, namespaces changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="test.php updated, namespaces changed" />
+    <MESSAGE value=".gitignore file updated" />
+    <option name="LAST_COMMIT_MESSAGE" value=".gitignore file updated" />
   </component>
 </project>
