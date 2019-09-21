@@ -6,7 +6,7 @@
  * Date: 9/9/2019
  **/
 
-namespace PHPMAth\Math;
+namespace PHPMath\Math;
 
 
 use Exception;
