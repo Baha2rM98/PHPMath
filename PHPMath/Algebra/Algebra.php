@@ -6,9 +6,9 @@
  * Date: 10/9/2019
  **/
 
-namespace PHPMAth\Algebra;
+namespace PHPMath\Algebra;
 
-use PHPMAth\Math\Math;
+use PHPMath\Math\Math;
 use Exception;
 
 class Algebra
