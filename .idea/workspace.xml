@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="" />
+    <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/algebra/Algebra.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/math/Math.php" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +118,8 @@
       <workItem from="1568824824357" duration="437000" />
       <workItem from="1568827513330" duration="181000" />
       <workItem from="1568828506717" duration="204000" />
+      <workItem from="1568896902097" duration="108000" />
+      <workItem from="1569083757345" duration="430000" />
     </task>
     <task id="LOCAL-00001" summary="trigonometric functions added">
       <created>1568035548070</created>
@@ -442,7 +450,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568828700854</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="a necessary autoload added">
+      <created>1568896969859</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1568896969859</updated>
+    </task>
+    <task id="LOCAL-00049" summary="workspace file updated">
+      <created>1568896996682</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1568896996682</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -471,7 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="linear, quadratic and cubic equation solver added" />
     <MESSAGE value="bugs fixed" />
     <MESSAGE value="namespace changed to Math" />
     <MESSAGE value="some inner functions added, there are 4 more things to complete:)" />
@@ -494,8 +515,9 @@
     <MESSAGE value="some necessary constants added" />
     <MESSAGE value="some new methods added :)" />
     <MESSAGE value="an extra method deleted" />
-    <MESSAGE value="workspace file updated" />
     <MESSAGE value="extra require_once deleted" />
-    <option name="LAST_COMMIT_MESSAGE" value="extra require_once deleted" />
+    <MESSAGE value="a necessary autoload added" />
+    <MESSAGE value="workspace file updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace file updated" />
   </component>
 </project>
