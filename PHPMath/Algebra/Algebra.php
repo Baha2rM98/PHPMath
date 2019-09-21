@@ -6,11 +6,9 @@
  * Date: 10/9/2019
  **/
 
-namespace Algebra;
+namespace PHPMAth\Algebra;
 
-require_once "src\math\Math.php";
-
-use Math\Math;
+use PHPMAth\Math\Math;
 use Exception;
 
 class Algebra
