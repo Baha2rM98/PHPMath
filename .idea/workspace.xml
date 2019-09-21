@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,21 +115,7 @@
       <workItem from="1568827513330" duration="181000" />
       <workItem from="1568828506717" duration="204000" />
       <workItem from="1568896902097" duration="108000" />
-      <workItem from="1569083757345" duration="1187000" />
-    </task>
-    <task id="LOCAL-00007" summary="two method added: check if a number is prime, make a list includes prime numbers between two specific number">
-      <created>1568134068547</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1568134068547</updated>
-    </task>
-    <task id="LOCAL-00008" summary="bugs fixed">
-      <created>1568143221000</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1568143221000</updated>
+      <workItem from="1569083757345" duration="1446000" />
     </task>
     <task id="LOCAL-00009" summary="not essential constructor deleted">
       <created>1568147646847</created>
@@ -461,7 +446,21 @@
       <option name="project" value="LOCAL" />
       <updated>1569084954090</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="test.php updated">
+      <created>1569084977739</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1569084977739</updated>
+    </task>
+    <task id="LOCAL-00057" summary="test.php updated, namespaces changed">
+      <created>1569085061041</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1569085061041</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -490,8 +489,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="math class completed :)" />
-    <MESSAGE value="workspace file updated, composer added to project" />
     <MESSAGE value="composer.lock created" />
     <MESSAGE value="extra PHPDoc deleted" />
     <MESSAGE value="test file created" />
@@ -515,6 +512,8 @@
     <MESSAGE value="vendor omitted" />
     <MESSAGE value="composer updated" />
     <MESSAGE value="math namespace changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="math namespace changed" />
+    <MESSAGE value="test.php updated" />
+    <MESSAGE value="test.php updated, namespaces changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="test.php updated, namespaces changed" />
   </component>
 </project>
