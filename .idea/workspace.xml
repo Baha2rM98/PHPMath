@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f3fe6e2d-dd36-4011-861b-c3a2e986df80" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,16 +71,6 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="test.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/test.php">
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="PHP Script.test.php" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -116,14 +106,8 @@
       <workItem from="1568827513330" duration="181000" />
       <workItem from="1568828506717" duration="204000" />
       <workItem from="1568896902097" duration="108000" />
-      <workItem from="1569083757345" duration="3333000" />
-    </task>
-    <task id="LOCAL-00010" summary="algebra class created">
-      <created>1568147669655</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1568147669655</updated>
+      <workItem from="1569083757345" duration="3964000" />
+      <workItem from="1569091587330" duration="16000" />
     </task>
     <task id="LOCAL-00011" summary="a function's name changed">
       <created>1568155701470</created>
@@ -461,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569085254274</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="README updated">
+      <created>1569087151883</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1569087151883</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -490,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="composer.lock created" />
     <MESSAGE value="extra PHPDoc deleted" />
     <MESSAGE value="test file created" />
     <MESSAGE value="composer.lock updated" />
@@ -515,6 +505,7 @@
     <MESSAGE value="test.php updated" />
     <MESSAGE value="test.php updated, namespaces changed" />
     <MESSAGE value=".gitignore file updated" />
-    <option name="LAST_COMMIT_MESSAGE" value=".gitignore file updated" />
+    <MESSAGE value="README updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="README updated" />
   </component>
 </project>
