@@ -8,8 +8,16 @@
   ],
   "type": "library",
   "license": "MIT",
-  "minimum-stability": "stable",
   "homepage": "https://github.com/Baha2rM98/PHPMath",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Baha2rM98/PHPMath"
+    }
+  ],
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "version": "1.0.0",
   "authors": [
     {
       "name": "Bahador Mirzazadeh",
