@@ -17,20 +17,20 @@ class Algebra
      * private fields for inner usage
      */
     private const ZERO = 0;
-    private const ONE = 1;
-    private const NEG_ONE = -1;
     private const TWO = 2;
     private const THREE = 3;
     private const PI = M_PI;
     private $math;
+    private $matrixFactory;
 
 
     /**
-     * main constructor to create an instance of Math class
+     * main constructor to create an instance of Math class and MatrixFactory class
      **/
     public function __construct()
     {
         $this->math = new Math();
+        $this->matrixFactory = new MatrixFactory();
     }
 
 
@@ -120,42 +120,6 @@ class Algebra
         return $roots;
     }
 
-    /**
-     * @param array $matrix the input $matrix
-     * @param integer $n the dimension of the $matrix
-     * @return float|int return calculated determinant of this $matrix
-     * @throws Exception
-     */
-    public function determinant($matrix, $n)
-    {
-        if ($n <= self::ONE)
-            throw new Exception("the dimension of matrix can not be one or less than!");
-        if ((count($matrix) !== count(current($matrix))))
-            throw new Exception("this is not a square matrix!");
-        $d = count($matrix);
-        if ($d !== $n)
-            throw new Exception("entered data does not match!");
-        if ($n === self::TWO)
-            return (($matrix[0][0] * $matrix[1][1]) - ($matrix[1][0] * $matrix[0][1]));
-        $det = 0;
-        $subMatrix = array(array());
-        for ($x = 0; $x < $n; $x++) {
-            $subI = 0;
-            for ($i = 1; $i < $n; $i++) {
-                $subJ = 0;
-                for ($j = 0; $j < $n; $j++) {
-                    if ($j === $x)
-                        continue;
-                    $subMatrix[$subI][$subJ] = $matrix[$i][$j];
-                    $subJ++;
-                }
-                $subI++;
-            }
-            $det = $det + ($this->math->pow(self::NEG_ONE, $x) * $matrix[0][$x] * $this->determinant($subMatrix, $n - self::ONE));
-        }
-        return $det;
-    }
-
 
     /**
      * @param array $coefficients matrix
@@ -165,14 +129,14 @@ class Algebra
      */
     public function systemOf2Equation2anonymity($coefficients, $anonymity)
     {
-        $cDet = $this->determinant($coefficients, self::TWO);
+        $cDet = $this->matrixFactory->determinant($coefficients, self::TWO);
         if ($cDet === self::ZERO)
             throw new Exception("this system has no answer!");
         $xMatrix = array(array($anonymity[0][0], $coefficients[0][1]), array($anonymity[1][0], $coefficients[1][1]));
         $yMatrix = array(array($coefficients[0][0], $anonymity[0][0]), array($coefficients[1][0], $anonymity[1][0]));
         $ans = array();
-        $ans[] = (($this->determinant($xMatrix, self::TWO)) / $cDet);
-        $ans[] = (($this->determinant($yMatrix, self::TWO)) / $cDet);
+        $ans[] = (($this->matrixFactory->determinant($xMatrix, self::TWO)) / $cDet);
+        $ans[] = (($this->matrixFactory->determinant($yMatrix, self::TWO)) / $cDet);
         return $ans;
     }
 
@@ -185,16 +149,16 @@ class Algebra
      */
     public function systemOf3Equation3anonymity($coefficients, $anonymity)
     {
-        $cDet = $this->determinant($coefficients, self::THREE);
+        $cDet = $this->matrixFactory->determinant($coefficients, self::THREE);
         if ($cDet === self::ZERO)
             throw new Exception("this system has no answer!");
         $xMatrix = array(array($anonymity[0][0], $coefficients[0][1], $coefficients[0][2]), array($anonymity[1][0], $coefficients[1][1], $coefficients[1][2]), array($anonymity[2][0], $coefficients[2][1], $coefficients[2][2]));
         $yMatrix = array(array($coefficients[0][0], $anonymity[0][0], $coefficients[0][2]), array($coefficients[1][0], $anonymity[1][0], $coefficients[1][2]), array($coefficients[2][0], $anonymity[2][0], $coefficients[2][2]));
         $zMatrix = array(array($coefficients[0][0], $coefficients[0][1], $anonymity[0][0]), array($coefficients[1][0], $coefficients[1][1], $anonymity[1][0]), array($coefficients[2][0], $coefficients[2][1], $anonymity[2][0]));
         $ans = array();
-        $ans[] = (($this->determinant($xMatrix, self::THREE)) / $cDet);
-        $ans[] = (($this->determinant($yMatrix, self::THREE)) / $cDet);
-        $ans[] = (($this->determinant($zMatrix, self::THREE)) / $cDet);
+        $ans[] = (($this->matrixFactory->determinant($xMatrix, self::THREE)) / $cDet);
+        $ans[] = (($this->matrixFactory->determinant($yMatrix, self::THREE)) / $cDet);
+        $ans[] = (($this->matrixFactory->determinant($zMatrix, self::THREE)) / $cDet);
         return $ans;
     }
 }
