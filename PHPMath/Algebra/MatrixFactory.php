@@ -39,13 +39,15 @@ class MatrixFactory
      */
     public function determinant($matrix, $n)
     {
-        if ($n <= self::ONE)
-            throw new Exception("the dimension of matrix can not be one or less than!");
+        if ($n < self::ONE)
+            throw new Exception("the dimension of matrix can not be less than!");
         if ((count($matrix) !== count(current($matrix))))
             throw new Exception("this is not a square matrix!");
         $d = count($matrix);
         if ($d !== $n)
             throw new Exception("entered data does not match!");
+        if ($n === self::ONE)
+            return $matrix[0][0];
         if ($n === self::TWO)
             return (($matrix[0][0] * $matrix[1][1]) - ($matrix[1][0] * $matrix[0][1]));
         $det = 0;
@@ -85,5 +87,61 @@ class MatrixFactory
             for ($j = 0; $j < $column; $j++)
                 $ans[$i][$j] = ($A[$i][$j] + $B[$i][$j]);
         return $ans;
+    }
+
+
+    /**
+     * @param $A array matrix will be negative
+     * @return array return negative matrix of $A
+     */
+    public function neg($A)
+    {
+        $ans = array(array());
+        $row = count($A);
+        $column = count(current($A));
+        for ($i = 0; $i < $row; $i++)
+            for ($j = 0; $j < $column; $j++)
+                $ans[$i][$j] = (-$A[$i][$j]);
+        return $ans;
+    }
+
+
+    /**
+     * @param $A array first matrix
+     * @param $B array second matrix will be subtracted from first one
+     * @return array return subtract of $A and $B
+     * @throws Exception
+     */
+    public function subtract($A, $B)
+    {
+        return $this->sum($A, $this->neg($B));
+    }
+
+
+    /**
+     * @param $A array matrix will be transposed
+     * @return array return transposed of matrix $A
+     */
+    public function transpose($A)
+    {
+        $row = count($A);
+        $column = count(current($A));
+        $transposed = array(array());
+        for ($i = 0; $i < $row; $i++)
+            for ($j = 0; $j < $column; $j++)
+                $transposed[$j][$i] = $A[$i][$j];
+        return $transposed;
+    }
+
+
+    /**
+     * @param $A array matrix will be check if it is singular or not
+     * @return boolean return true if $A is singular return false otherwise
+     * @throws Exception
+     */
+    public function isSingular($A)
+    {
+        $n = count($A);
+        return $this->determinant($A, $n) !== 0;
     }
 }
