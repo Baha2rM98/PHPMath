@@ -67,4 +67,23 @@ class MatrixFactory
         return $det;
     }
 
+
+    /**
+     * @param $A array first matrix
+     * @param $B array second matrix will be added to first one
+     * @return array return sum of $A and $B
+     * @throws Exception
+     */
+    public function sum($A, $B)
+    {
+        $row = count($A);
+        $column = count(current($A));
+        if (($row !== count($B)) || ($column !== count(current($B))))
+            throw new Exception("row and column of A and B are not equal!");
+        $ans = array(array());
+        for ($i = 0; $i < $row; $i++)
+            for ($j = 0; $j < $column; $j++)
+                $ans[$i][$j] = ($A[$i][$j] + $B[$i][$j]);
+        return $ans;
+    }
 }
