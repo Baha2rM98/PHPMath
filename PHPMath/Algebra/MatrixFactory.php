@@ -14,8 +14,8 @@ use Exception;
 class MatrixFactory
 {
     /*
-    * private fields for inner usage
-    */
+     * private fields for inner usage
+     */
     private const ONE = 1;
     private const NEG_ONE = -1;
     private const TWO = 2;
@@ -28,6 +28,20 @@ class MatrixFactory
     public function __construct()
     {
         $this->math = new Math();
+    }
+
+
+    /*
+     * private methods for inner usage
+     */
+    private function minor($matrix, $row, $column)
+    {
+        $minor = array(array());
+        for ($i = 0; $i < count($matrix); $i++)
+            for ($j = 0; $i != $row && $j < count(current($matrix)); $j++)
+                if ($j !== $column)
+                    $minor[$i < $row ? $i : $i - 1][$j < $column ? $j : $j - 1] = $matrix[$i][$j];
+        return $minor;
     }
 
 
@@ -143,5 +157,31 @@ class MatrixFactory
     {
         $n = count($A);
         return $this->determinant($A, $n) !== 0;
+    }
+
+
+    /**
+     * @param $A array the matrix will be inverse
+     * @return array return inverse of matrix $A
+     * @throws Exception
+     */
+    public function inverse($A)
+    {
+        $inverse = array(array());
+        $rows = count($A);
+        $columns = count(current($A));
+        for ($i = 0; $i < $rows; $i++)
+            for ($j = 0; $j < $columns; $j++)
+                $inverse[$i][$j] = $this->math->pow(-1, $i + $j) * $this->determinant($this->minor($A, $i, $j), $rows - self::ONE);
+        if (!$this->isSingular($A))
+            throw new Exception("this matrix has no inverse!");
+        $det = self::ONE / $this->determinant($A, $rows);
+        for ($i = 0; $i < count($inverse); $i++)
+            for ($j = 0; $j <= $i; $j++) {
+                $temp = $inverse[$i][$j];
+                $inverse[$i][$j] = $inverse[$j][$i] * $det;
+                $inverse[$j][$i] = $temp * $det;
+            }
+        return $inverse;
     }
 }
