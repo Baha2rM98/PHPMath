@@ -23,7 +23,7 @@ class MatrixFactory
 
 
     /**
-     * main constructor to create an instance of Math class
+     * Main constructor to create an instance of Math class
      **/
     public function __construct()
     {
@@ -33,6 +33,14 @@ class MatrixFactory
 
     /*
      * private methods for inner usage
+     */
+
+    /**
+     * Creates minor matrix
+     * @param array $matrix
+     * @param integer $row
+     * @param integer $column
+     * @return array return minor matrix
      */
     private function minor($matrix, $row, $column)
     {
@@ -44,12 +52,40 @@ class MatrixFactory
         return $minor;
     }
 
+    /**/
 
     /**
+     * Creates a matrix with specific row and column
+     * @param integer $rows number of rows
+     * @param integer $columns number of columns
+     * @param array $data an array includes data to fill built matrix
+     * @return array return built matrix
+     */
+    public function reShape($rows, $columns, $data)
+    {
+        $matrix = array(array());
+        $c = 0;
+        if (($rows * $columns) > count($data)) {
+            for ($i = 0; $i < $rows; $i++)
+                for ($j = 0; $j < $columns; $j++)
+                    $matrix[$i][$j] = 0;
+        }
+        for ($i = 0; $i < $rows; $i++)
+            for ($j = 0; $j < $columns; $j++) {
+                if ($c === count($data))
+                    break;
+                $matrix[$i][$j] = $data[$c];
+                $c++;
+            }
+        return $matrix;
+    }
+
+    /**
+     * Calculates determinant of input matrix
      * @param array $matrix the input $matrix
      * @param integer $n the dimension of the $matrix
      * @return float|int return calculated determinant of this $matrix
-     * @throws Exception
+     * @throws Exception throws exception if it is impossible to calculate determinant
      */
     public function determinant($matrix, $n)
     {
@@ -85,10 +121,11 @@ class MatrixFactory
 
 
     /**
+     * Calculates sum of two matrices
      * @param $A array first matrix
      * @param $B array second matrix will be added to first one
      * @return array return sum of $A and $B
-     * @throws Exception
+     * @throws Exception throws exception if row and column of A and B are not equal
      */
     public function sum($A, $B)
     {
@@ -105,26 +142,28 @@ class MatrixFactory
 
 
     /**
-     * @param $A array matrix will be negative
+     * Make a matrix negative
+     * @param $matrix array matrix will be negative
      * @return array return negative matrix of $A
      */
-    public function neg($A)
+    public function neg($matrix)
     {
         $ans = array(array());
-        $row = count($A);
-        $column = count(current($A));
+        $row = count($matrix);
+        $column = count(current($matrix));
         for ($i = 0; $i < $row; $i++)
             for ($j = 0; $j < $column; $j++)
-                $ans[$i][$j] = (-$A[$i][$j]);
+                $ans[$i][$j] = (-$matrix[$i][$j]);
         return $ans;
     }
 
 
     /**
+     * Calculates subtraction of two matrices
      * @param $A array first matrix
      * @param $B array second matrix will be subtracted from first one
-     * @return array return subtract of $A and $B
-     * @throws Exception
+     * @return array return subtraction of $A and $B
+     * @throws Exception throws exception if row and column of A and B are not equal
      */
     public function subtract($A, $B)
     {
@@ -133,49 +172,52 @@ class MatrixFactory
 
 
     /**
-     * @param $A array matrix will be transposed
+     * Creates transpose of a matrix
+     * @param $matrix array matrix will be transposed
      * @return array return transposed of matrix $A
      */
-    public function transpose($A)
+    public function transpose($matrix)
     {
-        $row = count($A);
-        $column = count(current($A));
+        $row = count($matrix);
+        $column = count(current($matrix));
         $transposed = array(array());
         for ($i = 0; $i < $row; $i++)
             for ($j = 0; $j < $column; $j++)
-                $transposed[$j][$i] = $A[$i][$j];
+                $transposed[$j][$i] = $matrix[$i][$j];
         return $transposed;
     }
 
 
     /**
-     * @param $A array matrix will be check if it is singular or not
+     * Detect singular matrices
+     * @param $matrix array matrix will be check if it is singular or not
      * @return boolean return true if $A is singular return false otherwise
-     * @throws Exception
+     * @throws Exception throw exception if determinant of $matrix is zero
      */
-    public function isSingular($A)
+    public function isSingular($matrix)
     {
-        $n = count($A);
-        return $this->determinant($A, $n) !== 0;
+        $n = count($matrix);
+        return $this->determinant($matrix, $n) !== 0;
     }
 
 
     /**
-     * @param $A array the matrix will be inverse
+     * Calculates inverse of a matrix
+     * @param $matrix array the matrix will be inverse
      * @return array return inverse of matrix $A
-     * @throws Exception
+     * @throws Exception throw exception if $matrix is singular
      */
-    public function inverse($A)
+    public function inverse($matrix)
     {
         $inverse = array(array());
-        $rows = count($A);
-        $columns = count(current($A));
+        $rows = count($matrix);
+        $columns = count(current($matrix));
         for ($i = 0; $i < $rows; $i++)
             for ($j = 0; $j < $columns; $j++)
-                $inverse[$i][$j] = $this->math->pow(-1, $i + $j) * $this->determinant($this->minor($A, $i, $j), $rows - self::ONE);
-        if (!$this->isSingular($A))
+                $inverse[$i][$j] = $this->math->pow(-1, $i + $j) * $this->determinant($this->minor($matrix, $i, $j), $rows - self::ONE);
+        if (!$this->isSingular($matrix))
             throw new Exception("this matrix has no inverse!");
-        $det = self::ONE / $this->determinant($A, $rows);
+        $det = self::ONE / $this->determinant($matrix, $rows);
         for ($i = 0; $i < count($inverse); $i++)
             for ($j = 0; $j <= $i; $j++) {
                 $temp = $inverse[$i][$j];
@@ -183,5 +225,71 @@ class MatrixFactory
                 $inverse[$j][$i] = $temp * $det;
             }
         return $inverse;
+    }
+
+
+    /**
+     * Calculates multiplication of two matrices
+     * @param $A array first matrix
+     * @param $B array second matrix will be multiplied to first one
+     * @return array return multiply of $A and $B
+     * @throws Exception throw exception if $A and $B are not multiplicable
+     */
+    public function multiply($A, $B)
+    {
+        $n = count($A);
+        $p = count(current($B));
+        $m = count($B);
+        if (count(current($A)) !== $m)
+            throw new Exception("these two matrices can not be multiplied!");
+        $res = array(array());
+        for ($i = 0; $i < $n; $i++)
+            for ($j = 0; $j < $p; $j++) {
+                $res[$i][$j] = 0;
+                for ($k = 0; $k < $m; $k++)
+                    $res[$i][$j] += ($A[$i][$k] * $B[$k][$j]);
+            }
+        return $res;
+    }
+
+
+    /**
+     * Multiply a number into matrix and creates a new matrix
+     * @param $scalar float scalar coefficient
+     * @param $matrix array the input matrix
+     * @return array return a matrix that each element is multiplied by scalar coefficient ($n)
+     */
+    public function scalarMul($scalar, $matrix)
+    {
+        $rows = count($matrix);
+        $columns = count(current($matrix));
+        for ($i = 0; $i < $rows; $i++)
+            for ($j = 0; $j < $columns; $j++)
+                $matrix[$i][$j] = $scalar * $matrix[$i][$j];
+        return $matrix;
+    }
+
+
+    /**
+     * Get number of rows and columns in a matrix and return result as an array
+     * @param $matrix array the input matrix
+     * @return array return an array which indicates number of rows and columns in $matrix
+     */
+    public function shape($matrix)
+    {
+        return [
+            "rows" => count($matrix), "columns" => count(current($matrix))
+        ];
+    }
+
+
+    /**
+     * Calculate size of matrix
+     * @param $matrix array the input matrix
+     * @return integer return size of $matrix
+     */
+    public function size($matrix)
+    {
+        return ($this->shape($matrix)["rows"] * $this->shape($matrix)["columns"]);
     }
 }
