@@ -548,7 +548,7 @@ class Math
      * @param integer $number
      * @return boolean return true if $number is complete square, false if is not
      **/
-    public function isCompleteSquare($number)
+    public function isPerfectSquare($number)
     {
         if (($number > self::ONE && $this->isOdd($number)) || $number === self::ZERO)
             return false;
