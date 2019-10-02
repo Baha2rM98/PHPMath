@@ -4,6 +4,8 @@
  * @author Baha2r
  * @license MIT
  * Date: 29/9/2019
+ *
+ * MatrixFactory class includes lots of method to do operations on matrices
  **/
 
 namespace PHPMath\Algebra;
@@ -32,7 +34,7 @@ class MatrixFactory
 
 
     /*
-     * private methods for inner usage
+     * private methods for inner usage *************************************************************
      */
 
     /**
@@ -52,32 +54,71 @@ class MatrixFactory
         return $minor;
     }
 
-    /**/
 
     /**
-     * Creates a matrix with specific row and column
+     * Detects if an array is a matrix or not
+     * @param $var array the array will be check if is matrix or not
+     * @return boolean return true if $var is a matrix, return false otherwise
+     */
+    private function isMatrix($var)
+    {
+        return is_array($var[0]);
+    }
+
+    /***************************************************************************************************/
+
+    /**
+     * Converts a an array into a matrix with specific row and column or Converts a matrix into an array or Reshape rows
+     * and columns of matrix
+     * @param array $data an array includes data to fill built matrix
      * @param integer $rows number of rows
      * @param integer $columns number of columns
-     * @param array $data an array includes data to fill built matrix
-     * @return array return built matrix
+     * @return array return built array
+     * @throws Exception throws exception if shape is out of range
      */
-    public function reShape($rows, $columns, $data)
+    public function reShape($data, $rows = null, $columns = null)
     {
         $matrix = array(array());
+        $array = array();
+        $temp = array();
+        $s = $this->size($data);
         $c = 0;
-        if (($rows * $columns) > count($data)) {
+        if (!$this->isMatrix($data)) {
+            if (($rows * $columns) > count($data))
+                throw new Exception("can not reshape array of size $s into shape ['rows' => $rows, 'columns' => $columns]");
             for ($i = 0; $i < $rows; $i++)
-                for ($j = 0; $j < $columns; $j++)
-                    $matrix[$i][$j] = 0;
+                for ($j = 0; $j < $columns; $j++) {
+                    if ($c === count($data))
+                        break;
+                    $matrix[$i][$j] = $data[$c];
+                    $c++;
+                }
+            return $matrix;
         }
-        for ($i = 0; $i < $rows; $i++)
-            for ($j = 0; $j < $columns; $j++) {
-                if ($c === count($data))
-                    break;
-                $matrix[$i][$j] = $data[$c];
-                $c++;
-            }
-        return $matrix;
+
+        if ($this->isMatrix($data) && is_null($rows) && is_null($columns)) {
+            for ($i = 0; $i < count($data); $i++)
+                for ($j = 0; $j < count(current($data)); $j++)
+                    $array[] = $data[$i][$j];
+            return $array;
+        }
+
+        if ($this->isMatrix($data) && !is_null($rows) && !is_null($columns)) {
+            for ($i = 0; $i < count($data); $i++)
+                for ($j = 0; $j < count(current($data)); $j++)
+                    $temp[] = $data[$i][$j];
+            if (($rows * $columns) > $this->size($data))
+                throw new Exception("can not reshape array of size $s into shape ['rows' => $rows, 'columns' => $columns]");
+            for ($i = 0; $i < $rows; $i++)
+                for ($j = 0; $j < $columns; $j++) {
+                    if ($c === count($temp))
+                        break;
+                    $matrix[$i][$j] = $temp[$c];
+                    $c++;
+                }
+            return $matrix;
+        }
+        return null;
     }
 
     /**
@@ -271,25 +312,31 @@ class MatrixFactory
 
 
     /**
-     * Get number of rows and columns in a matrix and return result as an array
-     * @param $matrix array the input matrix
-     * @return array return an array which indicates number of rows and columns in $matrix
+     * Get number of rows and columns in a matrix and return result as an array or represents the result in an integer
+     * @param $array array the input array
+     * @return array|integer return an array which indicates number of rows and columns in $array if it's a matrix, return
+     * number of elements if it's an 1D array
      */
-    public function shape($matrix)
+    public function shape($array)
     {
-        return [
-            "rows" => count($matrix), "columns" => count(current($matrix))
-        ];
+        if ($this->isMatrix($array)) {
+            return [
+                "rows" => count($array), "columns" => count(current($array))
+            ];
+        }
+        return count($array);
     }
 
 
     /**
-     * Calculate size of matrix
-     * @param $matrix array the input matrix
-     * @return integer return size of $matrix
+     * Calculate size of array
+     * @param $array array the input array
+     * @return integer return size of $array
      */
-    public function size($matrix)
+    public function size($array)
     {
-        return ($this->shape($matrix)["rows"] * $this->shape($matrix)["columns"]);
+        if ($this->isMatrix($array))
+            return ($this->shape($array)["rows"] * $this->shape($array)["columns"]);
+        return $this->shape($array);
     }
 }
