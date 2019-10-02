@@ -16,7 +16,7 @@ Installation
 Use [Composer] to install the package:
 
 ```
-$ composer require baha2rmirzazadeh/phpmath:dev-master
+$ composer require baha2rmirzazadeh/phpmath
 ```
 
 Example
