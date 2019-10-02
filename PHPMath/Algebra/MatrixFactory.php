@@ -131,7 +131,7 @@ class MatrixFactory
     public function determinant($matrix, $n)
     {
         if ($n < self::ONE)
-            throw new Exception("the dimension of matrix can not be less than!");
+            throw new Exception("the dimension of matrix can not be less than 1!");
         if ((count($matrix) !== count(current($matrix))))
             throw new Exception("this is not a square matrix!");
         $d = count($matrix);
