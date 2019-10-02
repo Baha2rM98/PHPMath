@@ -4,6 +4,8 @@
  * @author Baha2r
  * @license MIT
  * Date: 10/9/2019
+ *
+ * Algebra class includes methods to do algebraic operations like solving equations and solving system of linear equations
  **/
 
 namespace PHPMath\Algebra;
@@ -25,7 +27,7 @@ class Algebra
 
 
     /**
-     * main constructor to create an instance of Math class and MatrixFactory class
+     * Main constructor to create an instance of Math class and MatrixFactory class
      **/
     public function __construct()
     {
@@ -35,10 +37,11 @@ class Algebra
 
 
     /**
+     * Solves linear equation
      * @param float $a
      * @param float $b
      * @return float|int return root of equation
-     * @throws Exception
+     * @throws Exception throws exception if $a is zero
      */
     public function linearEquation($a, $b)
     {
@@ -49,11 +52,12 @@ class Algebra
 
 
     /**
+     * Solves quadratic equation
      * @param float $a
      * @param float $b
      * @param float $c
      * @return mixed return real roots of equation
-     * @throws Exception
+     * @throws Exception throws exception if $a is zero
      */
     public function quadraticEquation($a, $b, $c)
     {
@@ -72,12 +76,13 @@ class Algebra
 
 
     /**
+     * Solves cubic equation
      * @param float $a
      * @param float $b
      * @param float $c
      * @param float $d
      * @return mixed return real roots of equation
-     * @throws Exception
+     * @throws Exception throws exception if $a is zero
      */
     public function cubicEquation($a, $b, $c, $d)
     {
@@ -122,18 +127,19 @@ class Algebra
 
 
     /**
+     * Solves system of linear equations with two equations and two anonymities
      * @param array $coefficients matrix
-     * @param array $anonymity matrix
+     * @param array $data data matrix
      * @return array return answer of the system of linear equations in an array
-     * @throws Exception
+     * @throws Exception throws exception if determinant of coefficient matrix is zero
      */
-    public function systemOf2Equation2anonymity($coefficients, $anonymity)
+    public function systemOf2Equation2anonymity($coefficients, $data)
     {
         $cDet = $this->matrixFactory->determinant($coefficients, self::TWO);
         if ($cDet === self::ZERO)
             throw new Exception("this system has no answer!");
-        $xMatrix = array(array($anonymity[0][0], $coefficients[0][1]), array($anonymity[1][0], $coefficients[1][1]));
-        $yMatrix = array(array($coefficients[0][0], $anonymity[0][0]), array($coefficients[1][0], $anonymity[1][0]));
+        $xMatrix = array(array($data[0][0], $coefficients[0][1]), array($data[1][0], $coefficients[1][1]));
+        $yMatrix = array(array($coefficients[0][0], $data[0][0]), array($coefficients[1][0], $data[1][0]));
         $ans = array();
         $ans[] = (($this->matrixFactory->determinant($xMatrix, self::TWO)) / $cDet);
         $ans[] = (($this->matrixFactory->determinant($yMatrix, self::TWO)) / $cDet);
@@ -142,23 +148,37 @@ class Algebra
 
 
     /**
+     * Solves system of linear equations with three equations and three anonymities
      * @param array $coefficients matrix
-     * @param array $anonymity matrix
+     * @param array $data data matrix
      * @return array return answer of the system of linear equations in an array
-     * @throws Exception
+     * @throws Exception throws exception if determinant of coefficient matrix is zero
      */
-    public function systemOf3Equation3anonymity($coefficients, $anonymity)
+    public function systemOf3Equation3anonymity($coefficients, $data)
     {
         $cDet = $this->matrixFactory->determinant($coefficients, self::THREE);
         if ($cDet === self::ZERO)
             throw new Exception("this system has no answer!");
-        $xMatrix = array(array($anonymity[0][0], $coefficients[0][1], $coefficients[0][2]), array($anonymity[1][0], $coefficients[1][1], $coefficients[1][2]), array($anonymity[2][0], $coefficients[2][1], $coefficients[2][2]));
-        $yMatrix = array(array($coefficients[0][0], $anonymity[0][0], $coefficients[0][2]), array($coefficients[1][0], $anonymity[1][0], $coefficients[1][2]), array($coefficients[2][0], $anonymity[2][0], $coefficients[2][2]));
-        $zMatrix = array(array($coefficients[0][0], $coefficients[0][1], $anonymity[0][0]), array($coefficients[1][0], $coefficients[1][1], $anonymity[1][0]), array($coefficients[2][0], $coefficients[2][1], $anonymity[2][0]));
+        $xMatrix = array(array($data[0][0], $coefficients[0][1], $coefficients[0][2]), array($data[1][0], $coefficients[1][1], $coefficients[1][2]), array($data[2][0], $coefficients[2][1], $coefficients[2][2]));
+        $yMatrix = array(array($coefficients[0][0], $data[0][0], $coefficients[0][2]), array($coefficients[1][0], $data[1][0], $coefficients[1][2]), array($coefficients[2][0], $data[2][0], $coefficients[2][2]));
+        $zMatrix = array(array($coefficients[0][0], $coefficients[0][1], $data[0][0]), array($coefficients[1][0], $coefficients[1][1], $data[1][0]), array($coefficients[2][0], $coefficients[2][1], $data[2][0]));
         $ans = array();
         $ans[] = (($this->matrixFactory->determinant($xMatrix, self::THREE)) / $cDet);
         $ans[] = (($this->matrixFactory->determinant($yMatrix, self::THREE)) / $cDet);
         $ans[] = (($this->matrixFactory->determinant($zMatrix, self::THREE)) / $cDet);
         return $ans;
+    }
+
+
+    /**
+     * Solves system of linear equations with any equations and any anonymities
+     * @param array $coefficients matrix
+     * @param array $data data matrix
+     * @return array return answer of the system of linear equations in an array
+     * @throws Exception throws exception if determinant of coefficient matrix is zero
+     */
+    public function systemOfLinearEquation($coefficients, $data)
+    {
+        return $this->matrixFactory->reShape($this->matrixFactory->multiply($this->matrixFactory->inverse($coefficients), $data));
     }
 }
