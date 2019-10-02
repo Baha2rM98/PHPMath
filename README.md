@@ -36,7 +36,7 @@ print_r($algebra->systemOfLinearEquation([[2, -4, 5], [4, -1, 0], [-2, 2, -3]], 
 print_r($algebra->cubicEquation(1, 2, -1, -2));
 
 $matrix = new MatrixFactory();
-print_r($matrix->multiply([[2, 4, 6, -4], [3, 4, 5, 0]], [[1, 2], [1, 3], [12, -85], [-69, 21]]));
+print_r($matrix->transpose([[2, 4, 6, -4], [3, 4, 5, 0]]));
 print_r($matrix->multiply($matrix->inverse([[1, 2], [3, 4]]), [[1, 2], [3, 4]]));
 print_r($matrix->transpose([[1, 2], [3, 4], [5, 6]]));
 ```
