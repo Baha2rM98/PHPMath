@@ -25,15 +25,20 @@ Example
 ```php
 use PHPMath\Math\Math;
 use PHPMath\Algebra\Algebra;
+use PHPMath\Algebra\MatrixFactory;
 
 $math = new Math();
 print_r($math->ProbablePrimeNumbersList(20000, 185));
-
+print_r($math->dividable(1858));
 
 $algebra = new Algebra();
-print_r($algebra->systemOf3Equation3anonymity([[2, -4, 5], [4, -1, 0], [-2, 2, -3]], [[-33], [-5], [19]]));
+print_r($algebra->systemOfLinearEquation([[2, -4, 5], [4, -1, 0], [-2, 2, -3]], [[-33], [-5], [19]]));
 print_r($algebra->cubicEquation(1, 2, -1, -2));
-print_r($math->dividable(1858));
+
+$matrix = new MatrixFactory();
+print_r($matrix->multiply([[2, 4, 6, -4], [3, 4, 5, 0]], [[1, 2], [1, 3], [12, -85], [-69, 21]]));
+print_r($matrix->multiply($matrix->inverse([[1, 2], [3, 4]]), [[1, 2], [3, 4]]));
+print_r($matrix->transpose([[1, 2], [3, 4], [5, 6]]));
 ```
 
 ### Classes and Methods description
