@@ -38,7 +38,7 @@ print_r($algebra->cubicEquation(1, 2, -1, -2));
 $matrix = new MatrixFactory();
 print_r($matrix->transpose([[2, 4, 6, -4], [3, 4, 5, 0]]));
 print_r($matrix->multiply($matrix->inverse([[1, 2], [3, 4]]), [[1, 2], [3, 4]]));
-print_r($matrix->transpose([[1, 2], [3, 4], [5, 6]]));
+print_r($matrix->reShape([1, 2, 4, 5, 8, 9], 2, 3));
 ```
 
 ### Classes and Methods description
