@@ -118,6 +118,9 @@ class MatrixFactory
                 }
             return $matrix;
         }
+
+        if (($this->isMatrix($data) && is_null($rows) && !is_null($columns)) || $this->isMatrix($data) && !is_null($rows) && is_null($columns))
+            throw new Exception("can not reshape array of size $s into shape ['rows' => null, 'columns' => $columns] or ['rows' => $rows, 'columns' => null]");
         return null;
     }
 
