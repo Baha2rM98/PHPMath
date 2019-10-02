@@ -177,7 +177,7 @@ class Algebra
      * @return array return answer of the system of linear equations in an array
      * @throws Exception throws exception if determinant of coefficient matrix is zero
      */
-    public function systemOfLinearEquation($coefficients, $data)
+    public function systemOfLinearEquations($coefficients, $data)
     {
         return $this->matrixFactory->reShape($this->matrixFactory->multiply($this->matrixFactory->inverse($coefficients), $data));
     }
