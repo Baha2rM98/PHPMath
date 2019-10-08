@@ -4,19 +4,13 @@
   "keywords": [
     "php",
     "math",
-    "algebra"
+    "algebra",
+    "matrix",
+    "equation"
   ],
   "type": "library",
   "license": "MIT",
   "homepage": "https://github.com/Baha2rM98/PHPMath",
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/Baha2rM98/PHPMath"
-    }
-  ],
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "authors": [
     {
       "name": "Bahador Mirzazadeh",
