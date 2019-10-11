@@ -315,6 +315,26 @@ class MatrixFactory
 
 
     /**
+     * Multiply two vectors (two 1d arrays)
+     * @param $vector1 array first vector will be multiplied to second vector
+     * @param $vector2 array second vector
+     * @return float return a real number that is result of dot production of $vector1 and $vector2
+     * @throws Exception throws exception if number of elements in vector1 and vector2 is different
+     */
+    public function dotProduct($vector1, $vector2)
+    {
+        $s1 = count($vector1);
+        $s2 = count($vector2);
+        if ($s1 !== $s2)
+            throw new Exception("vector1 with size $s1 cannot multiply to vector2 with size $s2 as a dot product!");
+        $ans = 0;
+        for ($i = 0; $i < $s1; $i++)
+            $ans += ($vector1[$i] * $vector2[$i]);
+        return $ans;
+    }
+
+
+    /**
      * Get number of rows and columns in a matrix and return result as an array or represents the result in an integer
      * @param $array array the input array
      * @return array|integer return an array which indicates number of rows and columns in $array if it's a matrix, return
